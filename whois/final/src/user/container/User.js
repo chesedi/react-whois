@@ -1,14 +1,14 @@
-import React, { useEffect } from 'react';
-import { PageHeader, Col, Row, Descriptions, Typography } from 'antd';
-import { useHistory } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
-import { actions, Types } from '../state';
-import useFetchInfo from '../../common/hook/useFetchInfo';
-import History from '../../common/component/History';
-import Department from './Department';
-import TagList from './TagList';
-import FetchLabel from '../component/FetchLabel';
-import useNeedLogin from '../../common/hook/useNeedLogin';
+import React, { useEffect } from "react";
+import { PageHeader, Col, Row, Descriptions, Typography } from "antd";
+import { useHistory } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { actions, Types } from "../state";
+import useFetchInfo from "../../common/hook/useFetchInfo";
+import History from "../../common/component/History";
+import Department from "./Department";
+import TagList from "./TagList";
+import FetchLabel from "../component/FetchLabel";
+import useNeedLogin from "../../common/hook/useNeedLogin";
 
 /**
  *
@@ -19,8 +19,8 @@ export default function User({ match }) {
   useNeedLogin();
   const history = useHistory();
   const dispatch = useDispatch();
-  const user = useSelector(state => state.user.user);
-  const userHistory = useSelector(state => state.user.userHistory);
+  const user = useSelector((state) => state.user.user);
+  const userHistory = useSelector((state) => state.user.userHistory);
 
   const name = match.params.name;
   useEffect(() => {
@@ -38,7 +38,7 @@ export default function User({ match }) {
     <Row justify="center">
       <Col xs={24} md={20} lg={14}>
         <PageHeader
-          onBack={() => history.push('/')}
+          onBack={() => history.push("/")}
           title={
             <FetchLabel label="사용자 정보" actionType={Types.FetchUser} />
           }

@@ -1,4 +1,4 @@
-import readline from 'readline';
+import readline from "readline";
 
 const readlineInterface = readline.createInterface({
   input: process.stdin,
@@ -6,9 +6,9 @@ const readlineInterface = readline.createInterface({
 });
 
 export function waitForInput(msg: string) {
-  return new Promise<string>(res =>
-    readlineInterface.question(msg, key => {
+  return new Promise<string>((res) =>
+    readlineInterface.question(msg, (key) => {
       res(key);
-    }),
+    })
   );
 }
